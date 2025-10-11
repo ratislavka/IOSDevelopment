@@ -1,8 +1,8 @@
 //
 //  Address.swift
-//  Assignment_3_shopping_cart
+//  
 //
-//  Created by Ratislav Ovchinnikov on 01.10.2025.
+//  Created by Ratislav Ovchinnikov on 11.10.2025.
 //
 
 struct Address {
