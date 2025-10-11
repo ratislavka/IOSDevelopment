@@ -9,7 +9,7 @@ class ShoppingCart {
     // TODO: Add properties
     // - items: [CartItem] (private set, public get)
     // - discountCode: String? (optional)
-    let items: [CartItem]
+    var items: [CartItem]
     let discountCode: String?
     
     init() {
@@ -32,6 +32,13 @@ class ShoppingCart {
     // TODO: Remove item from cart
     func removeItem(productId: String) {
         // Remove CartItem with matching product.id
+        for item in items{
+            if item.product.id == productId{
+                items.remove(at: item.product.id)
+            }
+        }
+//        index = items.firstIndex(where: items.id == productId)
+//        items.remove(at: index)
     }
     
     // TODO: Update item quantity
@@ -42,7 +49,7 @@ class ShoppingCart {
     
     // TODO: Clear all items
     func clearCart() {
-        // Remove all items
+        items = []
     }
     
     // TODO: Computed property for subtotal
