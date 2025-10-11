@@ -6,6 +6,6 @@
 //
 
 
-enum ProductError: Error {
+public enum ProductError: Error {
     case mustBePositive(String)
 }

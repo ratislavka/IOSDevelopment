@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Order {
+public struct Order {
 
     let orderId: String
     let items: [CartItem]
@@ -28,6 +28,7 @@ struct Order {
         self.shippingAddress = shippingAddress
     }
 
+    // How many items were ordered/ How many items in the order
     var itemCount: Int {
         var count = 0
         for item in items {

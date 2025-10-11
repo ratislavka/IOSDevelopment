@@ -6,7 +6,7 @@
 //
 
 
-class ShoppingCart {
+public class ShoppingCart {
     private(set) var items: [CartItem]
     var discountCode: String?
     

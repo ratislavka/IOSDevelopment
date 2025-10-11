@@ -6,17 +6,19 @@
 //
 
 
-class User {
+public class User {
     let userId: String
     let name: String
     let email: String
     private(set) var orderHistory: [Order]
     var spent: Double
     
+    // New order made by the User
     func placeOrder(_ order: Order) {
         orderHistory.append(order)
     }
     
+    //How much money the User spent
     var totalSpent: Double {
         var total = 0.0
         for order in orderHistory{

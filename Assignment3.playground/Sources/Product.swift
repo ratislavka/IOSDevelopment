@@ -8,25 +8,30 @@
 
 import Foundation
 
-struct Product: Equatable {
-    let id: String
-    let name: String
-    let price: Double
-    let category: Category
-    let description: String
+public struct Product: Equatable {
+    public let id: String
+    public let name: String
+    public let price: Double
+    public let category: Category
+    public let description: String
     
-    enum Category {
+    public enum Category {
         case electronics, clothing, food, books
     }
     
-    var displayPrice: String {
+    public var displayPrice: String {
         // String(format: "$%.2f", price)
         // Format price as currency string (e.g., "$19.99")
         
         "$ \(price) "
     }
     
-    init(id: String = UUID().uuidString, name: String, price: Double, category: Category, description: String) throws {
+    public init(
+        id: String = UUID().uuidString,
+        name: String,
+        price: Double,
+        category: Category,
+        description: String) throws {
 //         guard price > 0 else {
 //              print("Error: Price must be positive!")
 //              return nil

@@ -5,7 +5,7 @@
 //  Created by Ratislav Ovchinnikov on 11.10.2025.
 //
 
-struct Address {
+public struct Address {
     let country: String
     let city: String
     let zipCode: String
