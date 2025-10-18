@@ -10,11 +10,11 @@ public class ShoppingCart {
     private(set) var items: [CartItem]
     var discountCode: String?
     
-    init() {
+    public init() {
         items = []
     }
     
-    func addItem(product: Product, quantity: Int = 1) {
+    public func addItem(product: Product, quantity: Int = 1) {
         if let index = items.firstIndex(where: {item in item.product == product}) {
             items[index].quantity += quantity
         } else {
@@ -26,13 +26,13 @@ public class ShoppingCart {
         }
     }
     
-    func removeItem(productId: String) {
+    public func removeItem(productId: String) {
         if let index = items.firstIndex(where: {item in item.product.id == productId}){
             items.remove(at: index)
         }
     }
     
-    func updateItemQuantity(productId: String, quantity: Int) {
+    public func updateItemQuantity(productId: String, quantity: Int) {
         if let index = items.firstIndex(where: {item in item.product.id == productId}){
             do{try items[index].updateQuantity(quantity)} catch {print(error)}
             

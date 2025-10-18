@@ -14,12 +14,12 @@ public class User {
     var spent: Double
     
     // New order made by the User
-    func placeOrder(_ order: Order) {
+    public func placeOrder(_ order: Order) {
         orderHistory.append(order)
     }
     
     //How much money the User spent
-    var totalSpent: Double {
+    public var totalSpent: Double {
         var total = 0.0
         for order in orderHistory{
             total += order.total
@@ -27,7 +27,7 @@ public class User {
         return total
     }
     
-    init(userId: String, name: String, email: String, orderHistory: [Order], spent: Double) {
+    public init(userId: String, name: String, email: String, orderHistory: [Order], spent: Double) {
         self.userId = userId
         self.name = name
         self.email = email

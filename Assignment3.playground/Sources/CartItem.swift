@@ -14,7 +14,7 @@ public struct CartItem {
         product.price * Double(quantity)
     }
     
-    mutating func updateQuantity(_ newQuantity: Int) throws{
+    public mutating func updateQuantity(_ newQuantity: Int) throws{
         if newQuantity > 0 {
             quantity = newQuantity
         }
@@ -23,11 +23,11 @@ public struct CartItem {
         }
     }
     
-    mutating func increaseQuantity(by amount: Int) {
+    public mutating func increaseQuantity(by amount: Int) {
         quantity += amount
     }
     
-    init(product: Product, quantity: Int) throws {
+    public init(product: Product, quantity: Int) throws {
         guard quantity > 0 else {
             throw ProductError.mustBePositive("Quantity must be positive!")
         }

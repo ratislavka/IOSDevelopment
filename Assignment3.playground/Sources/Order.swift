@@ -18,7 +18,7 @@ public struct Order {
     let timestamp: Date
     let shippingAddress: Address
     
-    init(from cart: ShoppingCart, shippingAddress: Address) {
+    public init(from cart: ShoppingCart, shippingAddress: Address) {
         orderId = UUID().uuidString
         items = cart.getItems()
         subtotal = cart.subtotal
@@ -29,7 +29,7 @@ public struct Order {
     }
 
     // How many items were ordered/ How many items in the order
-    var itemCount: Int {
+    public var itemCount: Int {
         var count = 0
         for item in items {
             count += item.quantity

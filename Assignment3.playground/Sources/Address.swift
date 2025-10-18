@@ -6,12 +6,12 @@
 //
 
 public struct Address {
-    let country: String
-    let city: String
-    let zipCode: String
-    let street: String
+    public let country: String
+    public let city: String
+    public let zipCode: String
+    public let street: String
     
-    var formattedAddress: String {
+    public var formattedAddress: String {
             """
             Country: \(country)
             City: \(city)
