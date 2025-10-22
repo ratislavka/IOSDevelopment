@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomApp_lab5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Olz-T6-t5q">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RouletteDoubleZero" translatesAutoresizingMaskIntoConstraints="NO" id="k4K-i1-cqB">
+                                <rect key="frame" x="31.666666666666657" y="109" width="330" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="HdL-4T-3lZ"/>
+                                    <constraint firstAttribute="width" constant="330" id="M8g-q7-c47"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll the roulette" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qq-8P-l2h">
+                                <rect key="frame" x="107.66666666666667" y="464" width="177.66666666666663" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brz-RZ-sGF">
+                                <rect key="frame" x="71.666666666666686" y="633" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AfR-nj-odZ"/>
+                                    <constraint firstAttribute="width" constant="250" id="dzg-XL-pp1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Try again" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="randomize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pxH-8e-2q3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UU-x8-HkO">
+                                <rect key="frame" x="146.66666666666666" y="569" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="F8C-Tn-shd"/>
+                                    <constraint firstAttribute="height" constant="40" id="Sss-At-LRA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Won!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7U-qN-L6Q">
+                                <rect key="frame" x="139.66666666666666" y="524" width="114" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i7U-qN-L6Q" firstAttribute="top" secondItem="0qq-8P-l2h" secondAttribute="bottom" constant="30" id="1Kh-n8-qKJ"/>
+                            <constraint firstItem="0qq-8P-l2h" firstAttribute="top" secondItem="k4K-i1-cqB" secondAttribute="bottom" constant="25" id="2I6-gi-Tsh"/>
+                            <constraint firstItem="k4K-i1-cqB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="FXF-O8-3Yw"/>
+                            <constraint firstItem="Olz-T6-t5q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MLW-Vi-EUn"/>
+                            <constraint firstItem="8UU-x8-HkO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qq2-Cx-avy"/>
+                            <constraint firstItem="Olz-T6-t5q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YGx-Hx-9kO"/>
+                            <constraint firstAttribute="bottom" secondItem="Olz-T6-t5q" secondAttribute="bottom" id="eIk-Dn-h6z"/>
+                            <constraint firstItem="8UU-x8-HkO" firstAttribute="top" secondItem="0qq-8P-l2h" secondAttribute="bottom" constant="75" id="gKa-Sb-VvT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Brz-RZ-sGF" secondAttribute="bottom" constant="135" id="il9-eq-nid"/>
+                            <constraint firstItem="Olz-T6-t5q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oDR-hc-eKX"/>
+                            <constraint firstItem="Brz-RZ-sGF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rxz-7h-9pa"/>
+                            <constraint firstItem="k4K-i1-cqB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXb-7U-W0F"/>
+                            <constraint firstItem="i7U-qN-L6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wHc-1P-Mu1"/>
+                            <constraint firstItem="0qq-8P-l2h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yQb-Zh-iAZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageRandomized" destination="k4K-i1-cqB" id="Zui-jf-ugz"/>
+                        <outlet property="nameRandomized" destination="0qq-8P-l2h" id="NkS-O2-cCA"/>
+                        <outlet property="resultLabel" destination="i7U-qN-L6Q" id="cMj-iH-j4u"/>
+                        <outlet property="userInputTextField" destination="8UU-x8-HkO" id="H8H-ra-U18"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" systemColor="systemPinkColor"/>
+    <resources>
+        <image name="Background" width="357" height="612"/>
+        <image name="RouletteDoubleZero" width="1638" height="1636"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

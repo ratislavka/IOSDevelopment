@@ -69,7 +69,7 @@ public class ShoppingCart {
         case "SAVE50":
             return subtotal * 0.5
         default:
-            return 0
+            return subtotal
         }
     }
     

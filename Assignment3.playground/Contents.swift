@@ -1,13 +1,5 @@
 import UIKit
 
-//
-//  Tests.swift
-//
-//
-//  Created by Ratislav Ovchinnikov on 11.10.2025.
-//
-
-
 // 1. Create sample products
 let laptop = try Product(
     name: "MacBook Pro", price: 800000,
@@ -48,7 +40,7 @@ print("Total with discount: \(cart.total)")
 cart.removeItem(productId: book.id)
 
 // 7. Demonstrate REFERENCE TYPE behavior
-func modifyCart(_ cart: ShoppingCart) {
+@MainActor func modifyCart(_ cart: ShoppingCart) {
     cart.addItem(product: headphones, quantity: 1)
 }
 modifyCart(cart)
@@ -70,3 +62,272 @@ cart.clearCart()
 
 print("Order items count: \(order.itemCount)") // Should not be 0
 print("Cart items count: \(cart.itemCount)")   // Should be 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public struct Address {
+    public let country: String
+    public let city: String
+    public let zipCode: String
+    public let street: String
+    
+    public var formattedAddress: String {
+            """
+            Country: \(country)
+            City: \(city)
+            Zip-Code: \(zipCode)
+            Street: \(street)
+            """
+    }
+}
+
+
+public struct CartItem {
+    var product: Product
+    var quantity: Int
+    
+    var subtotal: Double {
+        product.price * Double(quantity)
+    }
+    
+    public mutating func updateQuantity(_ newQuantity: Int) throws{
+        if newQuantity > 0 {
+            quantity = newQuantity
+        }
+        else {
+            throw ProductError.mustBePositive("Quantity must be positive!")
+        }
+    }
+    
+    public mutating func increaseQuantity(by amount: Int) {
+        quantity += amount
+    }
+    
+    public init(product: Product, quantity: Int) throws {
+        guard quantity > 0 else {
+            throw ProductError.mustBePositive("Quantity must be positive!")
+        }
+        self.product = product
+        self.quantity = quantity
+    }
+}
+
+public enum ProductError: Error {
+    case mustBePositive(String)
+}
+
+
+
+import Foundation
+
+public struct Order {
+
+    let orderId: String
+    let items: [CartItem]
+    let subtotal: Double
+    let discountAmount: Double
+    let total: Double
+    let timestamp: Date
+    let shippingAddress: Address
+    
+    public init(from cart: ShoppingCart, shippingAddress: Address) {
+        orderId = UUID().uuidString
+        items = cart.getItems()
+        subtotal = cart.subtotal
+        discountAmount = cart.discountAmount
+        total = cart.total
+        timestamp = Date()
+        self.shippingAddress = shippingAddress
+    }
+
+    // How many items were ordered/ How many items in the order
+    public var itemCount: Int {
+        var count = 0
+        for item in items {
+            count += item.quantity
+        }
+        return count
+    }
+    
+}
+
+
+import Foundation
+
+public struct Product: Equatable {
+    public let id: String
+    public let name: String
+    public let price: Double
+    public let category: Category
+    public let description: String
+    
+    public enum Category {
+        case electronics, clothing, food, books
+    }
+    
+    public var displayPrice: String {
+        // String(format: "$%.2f", price)
+        // Format price as currency string (e.g., "$19.99")
+        
+        "$ \(price) "
+    }
+    
+    public init(
+        id: String = UUID().uuidString,
+        name: String,
+        price: Double,
+        category: Category,
+        description: String) throws {
+//         guard price > 0 else {
+//              print("Error: Price must be positive!")
+//              return nil
+//         }
+        
+        guard price > 0 else {
+            throw ProductError.mustBePositive("Price must be positive")
+        }
+        
+        self.id = id
+        self.name = name
+        self.price = price
+        self.category = category
+        self.description = description
+    }
+}
+
+
+
+public class ShoppingCart {
+    private(set) var items: [CartItem]
+    var discountCode: String?
+    
+    public init() {
+        items = []
+    }
+    
+    public func addItem(product: Product, quantity: Int = 1) {
+        if let index = items.firstIndex(where: {item in item.product == product}) {
+            items[index].quantity += quantity
+        } else {
+            do{
+                let newItem = try CartItem(product: product, quantity: quantity)
+                items.append(newItem)
+            }
+            catch {print (error)}
+        }
+    }
+    
+    public func removeItem(productId: String) {
+        if let index = items.firstIndex(where: {item in item.product.id == productId}){
+            items.remove(at: index)
+        }
+    }
+    
+    public func updateItemQuantity(productId: String, quantity: Int) {
+        if let index = items.firstIndex(where: {item in item.product.id == productId}){
+            do{try items[index].updateQuantity(quantity)} catch {print(error)}
+            
+            if items[index].quantity == 0{
+                items.remove(at: index)
+            }
+        }
+    }
+    
+    func clearCart() {
+        // items = []
+        items.removeAll()
+    }
+    
+    var subtotal: Double {
+        // var subtotal: Double
+        var subtotal = 0.0
+        for item in items{
+            subtotal += item.product.price * Double(item.quantity)
+        }
+        return subtotal
+    }
+    
+    var discountAmount: Double {
+        switch discountCode{
+        case "SAVE10":
+            return subtotal * 0.1
+        case "SAVE20":
+            return subtotal * 0.2
+        case "SAVE30":
+            return subtotal * 0.3
+        case "SAVE40":
+            return subtotal * 0.4
+        case "SAVE50":
+            return subtotal * 0.5
+        default:
+            return 0
+        }
+    }
+    
+    var total: Double {
+        subtotal - discountAmount
+    }
+    
+    var itemCount: Int {
+        var count = 0
+        for item in items {
+            count += item.quantity
+        }
+        return count
+    }
+    
+    var isEmpty: Bool {
+        items.isEmpty
+    }
+    
+    public func getItems() -> [CartItem]{
+        items
+    }
+}
+
+
+public class User {
+    let userId: String
+    let name: String
+    let email: String
+    private(set) var orderHistory: [Order]
+    var spent: Double
+    
+    // New order made by the User
+    public func placeOrder(_ order: Order) {
+        orderHistory.append(order)
+    }
+    
+    //How much money the User spent
+    public var totalSpent: Double {
+        var total = 0.0
+        for order in orderHistory{
+            total += order.total
+        }
+        return total
+    }
+    
+    public init(userId: String, name: String, email: String, orderHistory: [Order], spent: Double) {
+        self.userId = userId
+        self.name = name
+        self.email = email
+        self.orderHistory = orderHistory
+        self.spent = spent
+    }
+}
