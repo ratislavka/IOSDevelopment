@@ -7,10 +7,10 @@
 
 
 public struct CartItem {
-    var product: Product
-    var quantity: Int
+    public var product: Product
+    public var quantity: Int
     
-    var subtotal: Double {
+    public var subtotal: Double {
         product.price * Double(quantity)
     }
     
