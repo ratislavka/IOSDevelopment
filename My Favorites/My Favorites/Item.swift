@@ -26,31 +26,31 @@ let data: [FavoritesData] = [
             image: .ironMan,
             title: "Iron Man",
             subtitle: "Jon Favreau, 2008",
-            review: "A revolutionary superhero film that launched the MCU. Robert Downey Jr.'s charismatic performance and witty dialogue make Tony Stark an unforgettable character. The armor design and special effects were groundbreaking for the time."
+            review: "A revolutionary superhero film that launched the MCU."
         ),
         Item(
             image: .rush,
             title: "Rush",
             subtitle: "Ron Howard, 2013",
-            review: "An intense rivalry drama that captures the thrilling world of Formula 1 racing. The cinematography of the race sequences is spectacular, and the character development is compelling and emotionally engaging."
+            review: "An intense rivalry drama that captures the thrilling world of Formula 1 racing. "
         ),
         Item(
             image: .pirates,
             title: "Pirates of the Caribbean: The Curse of the Black Pearl",
             subtitle: "Gore Verbinski, 2003",
-            review: "A swashbuckling adventure that perfectly balances humor, action, and fantasy. Johnny Depp's quirky portrayal of Jack Sparrow is iconic and hilarious. The film revitalized the pirate genre in cinema."
+            review: "A swashbuckling adventure that perfectly balances humor, action, and fantasy."
         ),
         Item(
             image: .starWars,
             title: "Star Wars: Return of the Jedi",
             subtitle: "Richard Marquardt, 1983",
-            review: "The perfect conclusion to the original trilogy. Epic battles, emotional character arcs, and the iconic redemption of Darth Vader create a satisfying ending. The practical effects remain impressive decades later."
+            review: "Epic battles, emotional character arcs, and the iconic redemption of Darth Vader create a satisfying ending."
         ),
         Item(
             image: .lotr3,
             title: "The Lord of the Rings: The Return of the King",
             subtitle: "Peter Jackson, 2003",
-            review: "An absolute masterpiece that concludes the epic trilogy magnificently. The Battle of Pelennor Fields is one of cinema's greatest sequences. The emotional depth and faithful adaptation make this timeless."
+            review: "An absolute masterpiece that concludes the epic trilogy magnificently."
         ),
     ]),
     
@@ -59,31 +59,31 @@ let data: [FavoritesData] = [
             image: .hailMary,
             title: "Project Hail Mary",
             subtitle: "Andy Weir, 2021",
-            review: "A thrilling sci-fi adventure combining hard science with humor and heart. The protagonist's problem-solving ingenuity and unexpected friendship make this impossible to put down."
+            review: "A thrilling sci-fi adventure combining hard science with humor and heart."
         ),
         Item(
             image: .seaOfStars,
             title: "To sleep in a Sea of Stars",
             subtitle: "Lara Leff, 2024",
-            review: "A captivating tale that weaves mystery and wonder throughout. The world-building is immersive and the character development feels authentic. A hidden gem in the sci-fi community."
+            review: "A captivating tale that weaves mystery and wonder throughout. "
         ),
         Item(
             image: .harryPotter,
             title: "Harry Potter",
             subtitle: "J.K. Rowling, 1997-2007",
-            review: "A cultural phenomenon that defined a generation of readers. The magical world is intricately detailed, characters are deeply relatable, and the overarching story arc is brilliantly executed."
+            review: "A cultural phenomenon that defined a generation of readers."
         ),
         Item(
             image: ._11_22_63,
             title: "11.22.63",
             subtitle: "Stephen King, 2011",
-            review: "King's masterwork combining time travel with historical fiction. A thought-provoking exploration of fate, love, and the consequences of changing history set against 1960s America."
+            review: "King's masterwork combining time travel with historical fiction. "
         ),
         Item(
             image: .christine,
             title: "Christine",
             subtitle: "Stephen King, 1974",
-            review: "King's debut novel remains a terrifying and tragic masterpiece. The exploration of adolescent isolation and supernatural horror creates an unforgettable blend of psychological and supernatural terror."
+            review: "King's debut novel remains a terrifying and tragic masterpiece."
         ),
     ]),
     
@@ -92,31 +92,31 @@ let data: [FavoritesData] = [
             image: .theChampions,
             title: "We Are the Champions",
             subtitle: "Queen, 1977",
-            review: "An anthem of triumph and confidence. Freddie Mercury's powerful vocals and the band's instrumental prowess create an iconic celebration of victory that never fails to inspire."
+            review: "Freddie Mercury's powerful vocals and the band's instrumental prowess create an iconic celebration of victory that never fails to inspire."
         ),
         Item(
             image: .countingStars,
             title: "Counting Stars",
             subtitle: "OneRepublic, 2013",
-            review: "An uplifting and catchy pop anthem with meaningful lyrics about ambition and determination. The production is polished and the melody is instantly memorable."
+            review: "An uplifting and catchy pop anthem with meaningful lyrics about ambition and determination."
         ),
         Item(
             image: .talks,
             title: "Everybody Talks",
             subtitle: "Neon Trees, 2010",
-            review: "A high-energy indie rock track with infectious energy and clever lyrics. The guitar work is crisp and the vocals are passionate and engaging."
+            review: "A high-energy indie rock track with infectious energy and clever lyrics. "
         ),
         Item(
             image: .blueSky,
             title: "Mr. Blue Sky",
-            subtitle: "Electric Light Orchestra, 1977",
-            review: "An absolutely joyful and uplifting composition that radiates positivity. The orchestral arrangement is lush and elaborate, with the power to brighten any day."
+            subtitle: "Weezer",
+            review: "An absolutely joyful and uplifting composition that radiates positivity. "
         ),
         Item(
             image: .yellow,
             title: "Yellow",
             subtitle: "Coldplay, 2000",
-            review: "A beautifully emotional and haunting ballad showcasing Coldplay's melodic genius. Chris Martin's vulnerable vocals make this timeless and deeply moving."
+            review: "A beautifully emotional and haunting ballad showcasing Coldplay's melodic genius. "
         ),
     ]),
     

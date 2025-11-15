@@ -17,21 +17,18 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
-
 }
 
 
 
 extension ViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data[section].items.count //return 4
+        return data[section].items.count
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count // return 5
+        return data.count
     }
     
     
@@ -47,14 +44,12 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return data[section].section
     }
-    
-
 }
 
 
 
 extension ViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected")
+    }
 }
-
-
