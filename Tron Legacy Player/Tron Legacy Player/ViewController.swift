@@ -104,7 +104,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     private func updateNowPlaying() {
         guard let player = player else { return }
-        let track = tracks[currentIndex]
+        _ = tracks[currentIndex]
         
         var info = MPNowPlayingInfoCenter.default().nowPlayingInfo ?? [:]
         info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player.currentTime
@@ -181,18 +181,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             self.nextTrackGesture()
             return .success
         }
-        
-//        MPRemoteCommandCenter.shared().changePlaybackPositionCommand.addTarget { [weak self] event in
-//            guard let self = self,
-//                  let player = self.player,
-//                  let event = event as? MPChangePlaybackPositionCommandEvent else {
-//                return .commandFailed
-//            }
-//            player.currentTime = event.positionTime
-//            self.updateNowPlaying()
-//            return .success
-//        }
-
     }
     
     

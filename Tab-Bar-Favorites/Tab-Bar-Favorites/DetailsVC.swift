@@ -28,6 +28,7 @@ class DetailsVC: UIViewController {
         titleLabel.text = item.title
         subtitleLabel.text = item.subtitle
         reviewLabel.text = item.review
+        genreLabel.text = item.genre
     }
 //    private func setupUI() {
 //        // Configure image view

@@ -122,31 +122,31 @@ let data: [FavoritesData] = [
     
     FavoritesData(section: "Favorite University Courses", items: [
         Item(
-            image: UIImage(systemName: "apple.logo") ?? UIImage(),
+            image: .swift,
             title: "iOS Development",
             subtitle: "Mobile Programming",
             review: "Learning to build iOS applications has been incredibly rewarding. Mastering UIKit and creating beautiful interfaces teach both technical and design skills essential for modern app development."
         ),
         Item(
-            image: UIImage(systemName: "chevron.left.forwardslash.chevron.right") ?? UIImage(),
+            image: .oop,
             title: "Object-Oriented Programming",
             subtitle: "Core Programming Paradigm",
             review: "OOP fundamentals are essential for scalable software design. Understanding inheritance, polymorphism, and abstraction provides the foundation for writing maintainable code across languages."
         ),
         Item(
-            image: UIImage(systemName: "gear") ?? UIImage(),
+            image: .softeng,
             title: "Software Engineering",
             subtitle: "Software Development Principles",
             review: "A comprehensive course covering the entire software development lifecycle. Teaches how to build professional, production-ready applications from requirements to deployment and maintenance."
         ),
         Item(
-            image: UIImage(systemName: "globe") ?? UIImage(),
+            image: .webdev,
             title: "Web Development",
             subtitle: "Front-end & Back-end Development",
             review: "A practical exploration of building modern web applications. Learning HTML, CSS, JavaScript provides valuable skills for creating responsive and interactive web experiences."
         ),
         Item(
-            image: UIImage(systemName: "square.stack") ?? UIImage(),
+            image: .dsa,
             title: "Data Structures & Algorithms",
             subtitle: "Core Computer Science",
             review: "The foundation of efficient programming. Understanding data structures and algorithm design teaches crucial problem-solving skills essential for becoming a skilled software engineer."
